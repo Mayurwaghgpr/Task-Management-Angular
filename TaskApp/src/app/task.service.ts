@@ -17,7 +17,6 @@ export class TaskService {
       }
       let data = await response.json();
         console.log(data)
-      data = data.map((el: Task) => el.completed === 'done' ? {...el ,completed: true } : {...el,completed:false})
     
       return data
     } catch (error) {
@@ -27,7 +26,6 @@ export class TaskService {
   }
 
   async addTask(task: Task): Promise<Task> {
-    task.completed === true ? task.completed = 'done' : task.completed = 'pending';
     try {
       const response = await fetch(this.apiUrl, {
         method: 'POST',

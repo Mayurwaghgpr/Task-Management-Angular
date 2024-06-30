@@ -1,4 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
 .completed {
     text-decoration: line-through;
 }
+
+.list-item1, .edit-input {
+    border-radius: 10px;
+    border: solid 2px rgb(255, 255, 255);
+    padding: 0 10px;
+    background: #fff;
+    color: black;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    text-align: start;
+    font-size: 100%;
+}
+
+.list-item2 {
+    border-radius: 10px;
+    border: solid 2px rgb(255, 255, 255);
+    padding: 0 10px;
+    background: #fff;
+    color: black;
+    display: flex;
+    text-align: start;
+    width: 100%;
+    text-align: start;
+    font-size:100%;
+}
+
+.list { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    font-family: monospace;
+    color: azure;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(73, 130, 222, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+.button, .formbtn {
+    background: none;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fbf5aa;
+    transition-duration: 0.2s;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+

@@ -1,10 +1,9 @@
-<div>
+<div class="container content">
     <h2>Add Task</h2>
-    <form (ngSubmit)="addTask()">
-        <label>
-            Title:
-            <input [(ngModel)]="task.title" name="title" required>
+    <form class="d-flex gap-3" (ngSubmit)="addTask()">
+        <label class="w-100 ">
+            <input class="list-item1 w-100" [(ngModel)]="task.title" name="title" required>
         </label>
-        <button type="submit">Add Task</button>
-    </form>x
+        <button class="formbtn" type="submit">Add Task</button>
+    </form>
 </div>
