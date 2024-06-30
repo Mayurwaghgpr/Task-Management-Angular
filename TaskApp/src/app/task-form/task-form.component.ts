@@ -13,7 +13,7 @@ import { Task } from '../task';
 })
 export class TaskFormComponent {
   task: Task = {
-    id: 0,
+    id:'',
     title: '',
     completed: false
   };
@@ -25,7 +25,7 @@ export class TaskFormComponent {
     try {
     await this.taskService.addTask(this.task);
     this.task  = {
-    id: 0,
+    id: '',
     title: '',
     completed: false
   };

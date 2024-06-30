@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TaskService } from '../task.service';
 import { Task } from '../task';
-
+interface mode { item: string; mode: boolean}
 @Component({
   selector: 'app-task-list',
   standalone: true,
@@ -13,15 +13,18 @@ import { Task } from '../task';
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
-  editmode: boolean = false;
+  editmode:mode = {
+    item: '',
+    mode:true
+  };
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
-    this.loadTasks();
+    this.getTasks();
   }
 
-  async loadTasks(): Promise<void> {
+  async getTasks(): Promise<void> {
     try {
       this.tasks = await this.taskService.getTasks();
     } catch (error) {
@@ -29,7 +32,8 @@ export class TaskListComponent implements OnInit {
     }
   }
 
-  async deleteTask(id: number): Promise<void> {
+  async deleteTask(id: string): Promise<void> {
+    console.log(id)
     try {
       await this.taskService.deleteTask(id);
       this.tasks = this.tasks.filter(task => task.id !== id);
@@ -43,14 +47,16 @@ export class TaskListComponent implements OnInit {
     this.taskService.updateTask(task);
   }
 
-  toggleEditMode(): void {
-    this.editmode = !this.editmode;
+  toggleEditMode(t: string): void {
+    this.editmode.item=t
+    this.editmode.mode = !this.editmode.mode;
   }
 
   async saveTask(task: Task): Promise<void> {
     try {
       await this.taskService.updateTask(task);
-      this.editmode = false;
+      this.editmode.item=''
+      this.editmode.mode = false;
     } catch (error) {
       console.error('Failed to save task:', error);
     }

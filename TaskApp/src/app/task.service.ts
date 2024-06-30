@@ -46,9 +46,9 @@ export class TaskService {
     }
   }
 
-  async deleteTask(id: number): Promise<void> {
+  async deleteTask(id: string): Promise<void> {
     try {
-      const response = await fetch(`${this.apiUrl}/${id}`, {
+      const response = await fetch(`${this.apiUrl}/:${id}`, {
         method: 'DELETE'
       });
       if (!response.ok) {
@@ -62,7 +62,7 @@ export class TaskService {
 
   async updateTask(task: Task): Promise<Task> {
     try {
-      const response = await fetch(`${this.apiUrl}/${task.id}`, {
+      const response = await fetch(`${this.apiUrl}/Edit/:${task.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

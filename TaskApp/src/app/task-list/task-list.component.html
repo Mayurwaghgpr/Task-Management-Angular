@@ -3,9 +3,9 @@
     <ul class="d-flex flex-column gap-3">
         <li class="d-flex gap-3" *ngFor="let task of tasks">
             <input type="checkbox" [checked]="task.completed" (change)="toggleComplete(task)">
-            <span *ngIf="!editmode" [class.completed]="task.completed">{{ task.title }}</span>
-            <input *ngIf="editmode" type="text" [(ngModel)]="task.title">
-            <button (click)="editmode ? saveTask(task) : toggleEditMode()">{{ editmode ? 'Save' : 'Edit' }}</button>
+            <span *ngIf="editmode.item!==task.id" [class.completed]="task.completed">{{ task.title }}</span>
+            <input *ngIf="editmode.item===task.id" type="text" [(ngModel)]="task.title">
+            <button (click)="editmode.item===task.id ? saveTask(task) : toggleEditMode(task.id)">{{ editmode ? 'Save' : 'Edit' }}</button>
             <button (click)="deleteTask(task.id)">Delete</button>
         </li>
     </ul>
