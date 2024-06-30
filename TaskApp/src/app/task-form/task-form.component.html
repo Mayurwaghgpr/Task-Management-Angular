@@ -1,0 +1,10 @@
+<div>
+    <h2>Add Task</h2>
+    <form (ngSubmit)="addTask()">
+        <label>
+            Title:
+            <input [(ngModel)]="task.title" name="title" required>
+        </label>
+        <button type="submit">Add Task</button>
+    </form>x
+</div>
