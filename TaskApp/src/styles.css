@@ -3,69 +3,90 @@
     text-decoration: line-through;
 }
 
-.list-item1, .edit-input {
+.form-item{
+    display: flex;
     border-radius: 10px;
-    border: solid 2px rgb(255, 255, 255);
-    padding: 0 10px;
+    border: none;
+    padding: 10px;
     background: #fff;
     color: black;
-    display: flex;
-    justify-content: start;
-    width: 100%;
-    text-align: start;
-    font-size: 100%;
+    justify-content: center;
+    width: 85%;
 }
-
+.form-item input{
+    width: 100%;
+}
 .list-item2 {
     border-radius: 10px;
-    border: solid 2px rgb(255, 255, 255);
     padding: 0 10px;
     background: #fff;
     color: black;
     display: flex;
-    text-align: start;
+    justify-content: space-between;
+    outline: none;
     width: 100%;
-    text-align: start;
-    font-size:100%;
 }
-
+input{
+    outline: none;
+    border: none;
+}
 .list { 
     display: flex;
-    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(233, 230, 230);
+    border-radius: 1rem;
     width: 100%;
-
 }
-
-.content {
+.content{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    min-height: 70vh;
+    border-radius: 2rem;
+    text-align: start;
+}
+h2{
+    padding: 0  60px;
+    width: 100%;
+}
+.formContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     border-radius: 2rem;
-    padding: 1.5rem;
     width: 100%;
-    height: 100%;
+    min-height: 30vh;
 }
-
 .main {
     font-family: monospace;
     color: azure;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
+    padding: 2rem;
     height: 100vh;
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(73, 130, 222, 1) 35%, rgba(0, 212, 255, 1) 100%);
 }
 
-.button, .formbtn {
+.button{
     background: none;
     padding: 5px 10px;
     border: none;
     border-radius: 10px;
-    width: 100%;
     cursor: pointer;
+}
+.formbtn {
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    border-radius: 0  10px 10px 0;
+    cursor: pointer;
+    padding: 10px 10px;
+    width: 15%;
 }
 
 button:hover {
@@ -73,10 +94,16 @@ button:hover {
     transition-duration: 0.2s;
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
 
+@media (min-width:720px) {
+    .list{
+        width: 900px;
+    }
+    h2 {
+        padding: 0 5px;
+            width: 800px;
+        }
+    .formContent {
+        align-items: center;
+    }
+}

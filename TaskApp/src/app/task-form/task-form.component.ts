@@ -23,7 +23,8 @@ export class TaskFormComponent {
   async addTask(): Promise<void> {
     if (!this.task.title) return;
     try {
-    await this.taskService.addTask(this.task);
+      await this.taskService.addTask(this.task);
+     
     this.task  = {
     id: '',
     title: '',
@@ -31,6 +32,7 @@ export class TaskFormComponent {
   };
     } catch (error) {
       console.error('Failed to load tasks:', error);
+    } finally {
     }
   }
 }
